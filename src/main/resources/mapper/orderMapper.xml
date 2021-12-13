@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ph.dao.OrderMapper">
+
+    <resultMap id="baseResultMap" type="com.ph.model.Order">
+        <id column="ID" property="id"/>
+        <result column="order_no" property="orderNo"/>
+        <result column="name" property="name"/>
+        <result column="biss_name" property="bissName"/>
+    </resultMap>
+
+    <select id="getOrder" resultMap="baseResultMap">
+        select ID,order_no,name,biss_name from t_order where id = #{id}
+    </select>
+
+
+</mapper>
