@@ -21,7 +21,7 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 20
       filters: stat
   redis:
-    host: 10.52.74.147
+    host: 127.0.0.1
     port: 6379
     password: Greatwall!@#403
     database: 0
