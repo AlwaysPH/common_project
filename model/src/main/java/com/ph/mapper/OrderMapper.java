@@ -1,4 +1,4 @@
-package com.ph.dao;
+package com.ph.mapper;
 
 import com.ph.model.Order;
 

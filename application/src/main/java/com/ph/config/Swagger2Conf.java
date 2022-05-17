@@ -24,16 +24,25 @@ public class Swagger2Conf extends WebMvcConfigurationSupport {
     @Bean
     public Docket getUserDocket(){
         ApiInfo apiInfo=new ApiInfoBuilder()
-                .title("测试接口")//api标题
-                .description("测试相关接口描述")//api描述
-                .version("1.0.0")//版本号
+                //api标题
+                .title("测试接口")
+                //api描述
+                .description("测试相关接口描述")
+                //版本号
+                .version("1.0.0")
                 .build();
-        return new Docket(DocumentationType.SWAGGER_2)//文档类型（swagger2）
-                .apiInfo(apiInfo)//设置包含在json ResourceListing响应中的api元信息
-                .enable(true) //配置是否启用Swagger，如果是false，在浏览器将无法访问
-                .select()//启动用于api选择的构建器
-                .apis(RequestHandlerSelectors.basePackage("com.ph.controller"))//扫描接口的包
-                .paths(PathSelectors.any())//路径过滤器（扫描所有路径）
+        //文档类型（swagger2）
+        return new Docket(DocumentationType.SWAGGER_2)
+                //设置包含在json ResourceListing响应中的api元信息
+                .apiInfo(apiInfo)
+                //配置是否启用Swagger，如果是false，在浏览器将无法访问
+                .enable(true)
+                //启动用于api选择的构建器
+                .select()
+                //扫描接口的包
+                .apis(RequestHandlerSelectors.basePackage("com.ph.controller"))
+                //路径过滤器（扫描所有路径）
+                .paths(PathSelectors.any())
                 .build();
     }
 
@@ -59,6 +68,7 @@ public class Swagger2Conf extends WebMvcConfigurationSupport {
         };
     }
 
+    @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins("*")
